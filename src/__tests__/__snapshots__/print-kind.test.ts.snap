@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`print-kind works 1`] = `
+"ScalarTypeDefinition ~> scalar
+DirectiveDefinition ~> directive
+ScalarTypeDefinition ~> scalar
+InputObjectTypeDefinition ~> input
+InterfaceTypeDefinition ~> interface
+ObjectTypeDefinition ~> type
+ObjectTypeDefinition ~> type
+ObjectTypeDefinition ~> type
+EnumTypeDefinition ~> enum
+EnumTypeExtension ~> extend enum
+InterfaceTypeExtension ~> extend interface
+ObjectTypeExtension ~> extend type
+InputObjectTypeExtension ~> extend input
+SchemaDefinition ~> schema
+ObjectTypeDefinition ~> type
+SchemaExtension ~> extend schema"
+`;

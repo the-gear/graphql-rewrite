@@ -1,0 +1,68 @@
+"""
+URL, like String with restriction
+"""
+scalar URL
+
+directive @ref(ref: URL!) on FIELD_DEFINITION
+
+"""
+Complex number
+"""
+scalar Complex
+
+input LoginInput {
+  email: String!
+  password: String!
+}
+
+interface Node {
+  id: ID!
+}
+
+type LoginResult {
+  query: Query
+}
+
+type Query {
+  imaginary: Complex
+  sqrt(val: Complex!): [Complex!]!
+}
+
+type Mutation {
+  login(credentials: LoginInput!): LoginResult
+}
+
+enum Decision { NO, YES }
+extend enum Decision { AWAITING }
+
+extend interface Node {
+  accepted: Decision
+  discussion: URL
+}
+
+extend type Query {
+  factorial(n: Integer): Integer
+}
+
+extend input LoginInput {
+  marketing: Boolean
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Subscription {
+  onlineUsers: Integer!
+}
+
+extend schema {
+  subscription: Subscription
+}
+
+# TODO:
+# union
+# extend union
+# fragment
+# operation
