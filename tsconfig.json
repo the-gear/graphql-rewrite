@@ -2,16 +2,12 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "es5",
-    "lib": [
-      "dom",
-      "es2018"
-    ],
+    "target": "es2015",
+    "lib": ["dom", "es2018", "esnext.asynciterable"],
     "strict": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
     "sourceMap": true,
     "stripInternal": true,
     "declaration": true,
@@ -21,8 +17,6 @@
     "resolveJsonModule": true,
     "importHelpers": true
   },
-  "include": [
-    "./src"
-  ],
+  "include": ["./src"],
   "compileOnSave": false
 }
