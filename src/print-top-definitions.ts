@@ -4,7 +4,7 @@ import cherr from 'chalk-stderr';
 import { Location } from 'graphql';
 import path from 'path';
 import terminalLink from 'terminal-link';
-import getRealDefinitionFirstToken from './get-real-definition-first-token';
+import firstSourceToken from './first-source-token';
 import printKind from './print-kind';
 import { ExtendedDefinitionNode, ExtendedDocumentNode, isNamedNode } from './types';
 
@@ -22,7 +22,7 @@ function locLink(loc: Location | null | undefined, options: PrintOptions): strin
     return '';
   }
 
-  const real = getRealDefinitionFirstToken(loc.startToken);
+  const real = firstSourceToken(loc.startToken);
   const url = `vscode://file/${loc.source.name}:${real.line}:${real.column}`;
 
   const relativeName = path.relative(options.rootDir || '.', loc.source.name);

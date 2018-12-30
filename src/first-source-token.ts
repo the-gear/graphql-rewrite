@@ -6,7 +6,7 @@ const ignoreTokens = new Set<TokenKindEnum>([
   TokenKind.COMMENT,
 ]);
 
-function getRealDefinitionFirstToken(first: Token): Token {
+export default function firstSourceToken(first: Token): Token {
   let token: Token | null = first;
   while (token && ignoreTokens.has(token.kind)) {
     token = token.next;
@@ -19,5 +19,3 @@ function getRealDefinitionFirstToken(first: Token): Token {
 
   return token;
 }
-
-export default getRealDefinitionFirstToken;
