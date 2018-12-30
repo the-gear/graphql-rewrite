@@ -25,6 +25,7 @@ export { default as loadSources } from './load-sources';
 export { default as loadAndParse } from './load-and-parse';
 export { default as sortDefinitions } from './sort-definitions';
 export { default as printTopDefinitions } from './print-top-definitions';
+export { default as printKind } from './print-kind';
 export { default as expandPaginationOnAST } from './expand-pagination-on-ast';
 export { default as traverseModules } from './traverse-modules';
 
