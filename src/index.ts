@@ -15,9 +15,11 @@ import {
 } from 'graphql';
 
 export * from './types';
+export { default as firstSourceToken } from './first-source-token';
 export { default as mergeDocuments } from './merge-documents';
 export { default as mergeExtensionsInDocument } from './merge-extensions-in-document';
-export { default as sortDefinitions } from './sort-document';
+export { default as mergeImplicit } from './merge-implicit';
+export { default as sortDocument } from './sort-document';
 export { default as printKind } from './print-kind';
 export { default as expandPaginationOnAST } from './expand-pagination-on-ast';
 

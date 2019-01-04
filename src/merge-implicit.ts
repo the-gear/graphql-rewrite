@@ -24,7 +24,7 @@ function addTypes(
   }
 }
 
-export default function mergeImplicitDeps(
+export default function mergeImplicit(
   ast: ExtendedDocumentNode,
   implicit: ExtendedDocumentNode,
 ): ExtendedDocumentNode {
