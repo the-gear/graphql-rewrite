@@ -1,8 +1,8 @@
 # The ⚙️ Gear: GraphQL AST Utilities
 
-[![Build Status](https://travis-ci.com/the-gear/graphql-ast.svg?branch=master)](https://travis-ci.com/the-gear/graphql-ast)
-[![NPM version](https://img.shields.io/npm/v/@the-gear/graphql-ast.svg)](https://www.npmjs.com/package/@the-gear/graphql-ast)
-![Downloads](https://img.shields.io/npm/dm/@the-gear/graphql-ast.svg)
+[![Build Status](https://travis-ci.com/the-gear/graphql-rewrite.svg?branch=master)](https://travis-ci.com/the-gear/graphql-rewrite)
+[![NPM version](https://img.shields.io/npm/v/@the-gear/graphql-rewrite.svg)](https://www.npmjs.com/package/@the-gear/graphql-rewrite)
+![Downloads](https://img.shields.io/npm/dm/@the-gear/graphql-rewrite.svg)
 [![Standard Version](https://img.shields.io/badge/release-standard%20version-brightgreen.svg)](https://github.com/conventional-changelog/standard-version)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
@@ -10,7 +10,7 @@
 ## Installing
 
 ```sh
-yarn add @the-gear/graphql-ast
+yarn add @the-gear/graphql-rewrite
 ```
 
 ## Getting started

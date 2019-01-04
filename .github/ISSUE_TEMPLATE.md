@@ -4,7 +4,7 @@
 
 ## Bug report
 
-- @the-gear/graphql-ast version: _x.x.x_ (<!-- (run `npm list @the-gear/graphql-ast` from a terminal/cmd prompt): -->)
+- @the-gear/graphql-rewrite version: _x.x.x_ (<!-- (run `npm list @the-gear/graphql-rewrite` from a terminal/cmd prompt): -->)
 - Affected browsers (and versions): _IE 10_
 
 ### Current behaviour

@@ -23,9 +23,9 @@
   "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/the-gear/graphql-ast"
+    "url": "https://github.com/the-gear/graphql-rewrite"
   },
-  "author": "Pavel Lang <langpavel+graphql-ast@the-gear.cz>",
+  "author": "Pavel Lang <langpavel+graphql-rewrite@the-gear.cz>",
   "contributors": [],
   "license": "MIT",
   "publishConfig": {

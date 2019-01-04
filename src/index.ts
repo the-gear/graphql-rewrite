@@ -1,8 +1,8 @@
 /**
- * Type definitions for @the-gear/graphql-ast 0.0.0
- * Project: https://github.com/the-gear/graphql-ast
+ * Type definitions for @the-gear/graphql-rewrite 0.0.0
+ * Project: https://github.com/the-gear/graphql-rewrite
  * Definitions by: Pavel Lang <https://github.com/langpavel>
- * Definitions: https://github.com/the-gear/graphql-ast
+ * Definitions: https://github.com/the-gear/graphql-rewrite
  * TypeScript Version: 3.2
  */
 
