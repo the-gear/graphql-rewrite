@@ -1,4 +1,4 @@
-import { ASTNode, DefinitionNode, Kind, TypeDefinitionNode, visit } from 'graphql/language';
+import { ASTNode, DefinitionNode, Kind, TypeDefinitionNode, visit } from 'graphql';
 import invariant from 'invariant';
 import { ExtendedASTNode, ExtendedDocumentNode } from './types';
 

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "moduleResolution": "node",
     "module": "esnext",
-    "target": "es2015",
+    "target": "es5",
     "lib": ["dom", "es2018", "esnext.asynciterable"],
     "strict": true,
     "esModuleInterop": true,
@@ -15,7 +15,8 @@
     "declarationDir": "dist/types",
     "outDir": "dist/esm5",
     "resolveJsonModule": true,
-    "importHelpers": true
+    "importHelpers": true,
+    "downlevelIteration": true
   },
   "include": ["./src"],
   "compileOnSave": false

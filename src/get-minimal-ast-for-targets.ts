@@ -15,7 +15,7 @@
 //  */
 //
 // import { DocumentNode, GraphQLList, GraphQLString } from 'graphql';
-// import { Kind, ValueNode, visit } from 'graphql/language';
+// import { Kind, ValueNode, visit } from 'graphql';
 // import { valueFromAST } from 'graphql/utilities';
 // import invariant from 'invariant';
 //

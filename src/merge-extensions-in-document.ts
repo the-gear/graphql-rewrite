@@ -50,7 +50,9 @@ function getKey(def: DefinitionNode): string | null {
   return getKeyByNode(def);
 }
 
-export default function mergeExtensionsIntoAST(inAst: ExtendedDocumentNode): ExtendedDocumentNode {
+export default function mergeExtensionsInDocument(
+  inAst: ExtendedDocumentNode,
+): ExtendedDocumentNode {
   invariant(inAst.kind === 'Document', 'Document node required');
   const definitions = new Map<string, ExtendedDefinitionNode>();
   const extensions = new Map<string, TypeSystemExtensionNode[]>();
@@ -66,9 +68,9 @@ export default function mergeExtensionsIntoAST(inAst: ExtendedDocumentNode): Ext
     if (isTypeSystemExtensionNode(def)) {
       const extensionsForType = extensions.get(typeName);
       if (extensionsForType) {
-        extensionsForType.push(def as TypeSystemExtensionNode);
+        extensionsForType.push(def);
       } else {
-        extensions.set(typeName, [def as TypeSystemExtensionNode]);
+        extensions.set(typeName, [def]);
       }
     } else if (isTypeSystemDefinitionNode(def)) {
       invariant(
@@ -76,7 +78,7 @@ export default function mergeExtensionsIntoAST(inAst: ExtendedDocumentNode): Ext
         'Schema cannot contain multiple definitions: "%s"',
         typeName,
       );
-      definitions.set(typeName, def as TypeSystemDefinitionNode);
+      definitions.set(typeName, def);
     }
   });
 

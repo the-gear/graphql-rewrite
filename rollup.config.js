@@ -4,7 +4,6 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import json from 'rollup-plugin-json';
 import commonjs from 'rollup-plugin-commonjs';
 import replace from 'rollup-plugin-replace';
-import { uglify } from 'rollup-plugin-uglify';
 import { terser } from 'rollup-plugin-terser';
 import { getIfUtils, removeEmpty } from 'webpack-config-utils';
 
@@ -40,7 +39,7 @@ const PATHS = {
 /**
  * @type {string[]}
  */
-const external = Object.keys(pkg.peerDependencies) || [];
+const external = [...Object.keys(pkg.peerDependencies)];
 
 /**
  *  @type {Plugin[]}
@@ -49,13 +48,13 @@ const plugins = /** @type {Plugin[]} */ ([
   // Allow json resolution
   json(),
 
-  // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
-  commonjs(),
-
   // Allow node_modules resolution, so you can use 'external' to control
   // which external modules to include in the bundle
   // https://github.com/rollup/rollup-plugin-node-resolve#usage
   nodeResolve(),
+
+  // Allow bundling cjs modules (unlike webpack, rollup doesn't understand cjs)
+  commonjs(),
 
   // Resolve source maps to the original source
   sourceMaps(),
@@ -66,6 +65,11 @@ const plugins = /** @type {Plugin[]} */ ([
     'process.env.NODE_ENV': JSON.stringify(env),
   }),
 ]);
+
+const globals = {
+  graphql: 'graphql',
+  tslib: 'tslib',
+};
 
 /**
  * @type {Config}
@@ -88,9 +92,10 @@ const UMDconfig = {
     file: getOutputFileName(resolve(PATHS.bundles, 'index.umd.js'), ifProduction()),
     format: 'umd',
     name: LIB_NAME,
+    globals: globals,
     sourcemap: true,
   },
-  plugins: removeEmpty(/** @type {Plugin[]} */ ([...plugins, ifProduction(uglify())])),
+  plugins: removeEmpty(/** @type {Plugin[]} */ ([...plugins, ifProduction(terser())])),
 };
 
 /**
@@ -104,6 +109,7 @@ const FESMconfig = {
       file: getOutputFileName(resolve(PATHS.bundles, 'index.esm.js'), ifProduction()),
       format: 'es',
       sourcemap: true,
+      globals: globals,
     },
   ],
   plugins: removeEmpty(/** @type {Plugin[]} */ ([...plugins, ifProduction(terser())])),
