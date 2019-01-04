@@ -46,7 +46,7 @@ function makeComparator<T>(
 // At first, this will sort by kind.
 // Second criteria is ASCII name
 // Third is order of keys in this POJO map ;-)
-export default function sortDefinitions(document: ExtendedDocumentNode): ExtendedDocumentNode {
+export default function sortDocument(document: ExtendedDocumentNode): ExtendedDocumentNode {
   const definitions = [...document.definitions];
   definitions.sort(
     makeComparator(
